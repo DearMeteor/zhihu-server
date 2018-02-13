@@ -1,0 +1,32 @@
+[[source]]
+
+url = "https://pypi.doubanio.com/simple/"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+flask = "*"
+flask-restful = "*"
+flask-sqlalchemy = "*"
+flask-httpauth = "*"
+flask-sqlacodegen = "*"
+pymysql = "*"
+pillow = "*"
+passlib = "*"
+requests = "*"
+gevent = "*"
+pandas = "*"
+pylru = "*"
+pyexcel-xls = "*"
+kazoo = "*"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "2.7"

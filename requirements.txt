@@ -1,0 +1,16 @@
+flask
+flask-RESTful
+flask_sqlalchemy
+flask_httpauth
+flask-sqlacodegen
+flask_apscheduler
+pymysql
+Pillow
+passlib
+requests
+gevent
+pandas
+pylru
+pyexcel_xls
+kazoo
+psycopg2

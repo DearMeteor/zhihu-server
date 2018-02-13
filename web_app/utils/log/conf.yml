@@ -1,0 +1,19 @@
+logging:
+  version: 1
+
+  formatters:
+    fluent_fmt:
+      '()': log_output_py.log_adapter.EventFormatter
+
+  handlers:
+    console:
+      class : logging.StreamHandler
+      level: DEBUG
+      formatter: fluent_fmt
+      stream: ext://sys.stdout
+
+  loggers:
+    'operation_vip':
+      handlers: [console]
+      level: DEBUG
+      propagate: False

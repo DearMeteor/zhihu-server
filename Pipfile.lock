@@ -1,0 +1,178 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "2c77103f12f6bfa7a465b1a52e921c10857429be18d07f79d4c7341630a612ba"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "0",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "4.13.11-1-MANJARO",
+            "platform_system": "Linux",
+            "platform_version": "#1 SMP PREEMPT Thu Nov 2 13:37:46 UTC 2017",
+            "python_full_version": "2.7.14",
+            "python_version": "2.7",
+            "sys_platform": "linux2"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "2.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.doubanio.com/simple/",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "aniso8601": {
+            "hashes": [],
+            "version": "==1.3.0"
+        },
+        "certifi": {
+            "hashes": [],
+            "version": "==2017.11.5"
+        },
+        "chardet": {
+            "hashes": [],
+            "version": "==3.0.4"
+        },
+        "click": {
+            "hashes": [],
+            "version": "==6.7"
+        },
+        "flask": {
+            "hashes": [],
+            "version": "==0.12.2"
+        },
+        "flask-httpauth": {
+            "hashes": [],
+            "version": "==3.2.3"
+        },
+        "flask-restful": {
+            "hashes": [],
+            "version": "==0.3.6"
+        },
+        "flask-sqlacodegen": {
+            "hashes": [],
+            "version": "==1.1.6.1"
+        },
+        "flask-sqlalchemy": {
+            "hashes": [],
+            "version": "==2.3.2"
+        },
+        "gevent": {
+            "hashes": [],
+            "version": "==1.2.2"
+        },
+        "greenlet": {
+            "hashes": [],
+            "version": "==0.4.12"
+        },
+        "idna": {
+            "hashes": [],
+            "version": "==2.6"
+        },
+        "inflect": {
+            "hashes": [],
+            "version": "==0.2.5"
+        },
+        "itsdangerous": {
+            "hashes": [],
+            "version": "==0.24"
+        },
+        "jinja2": {
+            "hashes": [],
+            "version": "==2.10"
+        },
+        "kazoo": {
+            "hashes": [],
+            "version": "==2.4.0"
+        },
+        "lml": {
+            "hashes": [],
+            "version": "==0.0.1"
+        },
+        "markupsafe": {
+            "hashes": [],
+            "version": "==1.0"
+        },
+        "numpy": {
+            "hashes": [],
+            "version": "==1.13.3"
+        },
+        "olefile": {
+            "hashes": [],
+            "version": "==0.44"
+        },
+        "pandas": {
+            "hashes": [],
+            "version": "==0.21.0"
+        },
+        "passlib": {
+            "hashes": [],
+            "version": "==1.7.1"
+        },
+        "pillow": {
+            "hashes": [],
+            "version": "==4.3.0"
+        },
+        "pyexcel-io": {
+            "hashes": [],
+            "version": "==0.5.3"
+        },
+        "pyexcel-xls": {
+            "hashes": [],
+            "version": "==0.5.4"
+        },
+        "pylru": {
+            "hashes": [],
+            "version": "==1.0.9"
+        },
+        "pymysql": {
+            "hashes": [],
+            "version": "==0.7.11"
+        },
+        "python-dateutil": {
+            "hashes": [],
+            "version": "==2.6.1"
+        },
+        "pytz": {
+            "hashes": [],
+            "version": "==2017.3"
+        },
+        "requests": {
+            "hashes": [],
+            "version": "==2.18.4"
+        },
+        "six": {
+            "hashes": [],
+            "version": "==1.11.0"
+        },
+        "sqlalchemy": {
+            "hashes": [],
+            "version": "==1.1.15"
+        },
+        "urllib3": {
+            "hashes": [],
+            "version": "==1.22"
+        },
+        "werkzeug": {
+            "hashes": [],
+            "version": "==0.12.2"
+        },
+        "xlrd": {
+            "hashes": [],
+            "version": "==1.1.0"
+        },
+        "xlwt": {
+            "hashes": [],
+            "version": "==1.3.0"
+        }
+    },
+    "develop": {}
+}

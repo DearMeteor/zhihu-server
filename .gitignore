@@ -1,0 +1,10 @@
+web_app/static/*
+web_app/index.html
+web_app/admin.html
+*.pyc
+.idea/
+web_app/upload/*
+web_app/tmp/
+/conf/*.json
+!/conf/config-*.json
+/logs/*.log

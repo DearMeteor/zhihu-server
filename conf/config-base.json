@@ -1,0 +1,54 @@
+{
+    "SQLALCHEMY_DATABASE_URI": "mysql+pymysql://root:aAa4761986@120.77.37.9:3306/test",
+    "SQLALCHEMY_BINDS": {
+        "log_public": "postgresql://postgres:postgres@10.46.80.107:5432/dq2",
+        "datamine": "mysql+pymysql://admin:dc_20160720@10.10.213.154:3306/datamine_oprn"
+    },
+    "ENV": "development",
+    "URLS": {
+        "SERVER_URL":  "http://192.168.5.51:10003/admin",
+        "REDEEM_CODE_URL": "http://192.168.5.51:18888/redeem",
+        "QUERY_URL": "http://192.168.5.51:10003/query",
+        "USER_CENTER_URL": "http://10.46.66.136:60003/frontend",
+        "dq_url": {
+            "1003": "https://dq-feel.9longe.net/ns_in",
+            "1004": "https://dq-feel.9longe.net/ns_in",
+            "1005": "https://dq-feel.9longe.net/ns_in",
+            "1006": "https://dq-feel.9longe.net/ns_in"
+        },
+        "redeem_code_url": "http://10.10.14.211:18888/redeem",
+        "dq2_url": {
+            "1010": "http://192.168.1.17:30003/frontend",
+            "1011": "http://192.168.1.17:30003/frontend"
+        }
+    },
+    "SERVER_TABLE_NAME": {
+        "102": "dq_server",
+        "104": "dq2_server",
+        "10001": "hsjx2_server"
+    },
+    "MERGE_GAME": [
+        102
+    ],
+    "GAME_APP": {
+        "102": [
+            1003,
+            1004,
+            1005,
+            1006
+        ],
+        "104": [
+            1010,
+            1011
+        ]
+    },
+    "APP_INFO": {
+        "1003": "大清苹果",
+        "1004": "大清安卓",
+        "1005": "大清国际(繁体)",
+        "1006": "大清智冠",
+        "1010": "万岁爷苹果&官方",
+        "1011": "万岁爷安卓渠道"
+    },
+    "SERVER_VERSION": "0.2"
+}
