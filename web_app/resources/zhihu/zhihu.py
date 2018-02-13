@@ -6,14 +6,12 @@ Created by yueliuxin on 2018/2/7
 
 from flask import request
 from flask_restful import Resource
-
-from web_app import auth
+from web_app.models.model import AnswerInfo, QuestionInfo, db, UserInfo
 from . import api_path
 
 
 class LoginManage(Resource):
-    decorators = [auth.login_required]
-    api_url = [api_path + 'login_manage', api_path + 'login_manage/<flag>']
+    api_url = [api_path + 'zhihu', api_path + 'zhihu/<flag>']
 
     def __init__(self):
         self.datetime_format = '%Y-%m-%d %H:%M:%S'
@@ -21,17 +19,26 @@ class LoginManage(Resource):
 
     def get(self):
         """
-        获得下拉框数据
         :return:
         """
-        gameInfo = [{'game_id': 102, 'game_config': u'', 'id': 1,
-                     'game_name': u'\u6211\u5728\u5927\u6e05\u5f53\u7687\u5e1d'},
-                    {'game_id': 104, 'game_config': None, 'id': 2, 'game_name': u'\u53eb\u6211\u4e07\u5c81\u7237'}]
-        gameList = []
-        data = [{'label': x['game_name'], 'value': x['game_id']} for x in gameInfo]
-        gameList.extend(data)
-        gameList.insert(0, {'label': '全部游戏', 'value': 0})
-        return {"status": 0, "msg": "获取下拉数据成功", "gameList": gameList}
+        data = []
+        ex_data = db.session.query(
+            AnswerInfo
+        ).limit(5)
+        if ex_data:
+            for item in ex_data:
+                tmp = item.to_dict()
+                question_info = db.session.query(
+                    QuestionInfo
+                ).filter(QuestionInfo.question_id == tmp['question_id']).first().to_dict()
+                tmp['question_title'] = question_info['title']
+                user_info = db.session.query(
+                    UserInfo
+                ).filter(UserInfo.user_id == tmp['user_id']).first().to_dict()
+                tmp['user_name'] = user_info['user_name']
+                tmp['icon'] = user_info['icon']
+                data.append(tmp)
+        return {"status": 0, "msg": "获取首页成功", "answer_data": data}
 
     def post(self, **kwargs):
         """
@@ -39,8 +46,7 @@ class LoginManage(Resource):
         :return:
         """
         fun_dict = {
-            'get_table_data': self.get_table_data,
-            'changeStatus': self.changeStatus
+            'get_table_data': self.get_table_data
         }
         if 'flag' in kwargs:
             flag_name = kwargs.get('flag')
@@ -49,18 +55,13 @@ class LoginManage(Resource):
             if fun:
                 return fun(form_data)
         else:
-            return {'status': 1, 'msg': '网络异常'}, 401
+            return {'status': 1, 'msg': '未知请求'}, 401
 
     def get_table_data(self, form_data):
         """
         获得表格数据
         :return:
         """
-        form_data = form_data.get('search_form')
-        gameId = form_data['gameId']
-        account = form_data['account']
-        phoneNumber = form_data['phoneNumber']
-
         """
         query = LoginInfo.query.filter(
             LoginInfo.account == account if account else text('')
@@ -101,40 +102,6 @@ class LoginManage(Resource):
                                'isFrozen': isFrozen, 'isIpBlocked': isIpBlocked})
         return {'status': 0, 'msg': '', 'tableData': table_data}
 
-    def changeStatus(self, form_data):
-        """
-        改变冻结状态
-        """
-        """
-        gameId = form_data['gameId']
-        account = form_data['account']
-        state = form_data['state']
-        type_ = form_data['type']
-
-        data = db.session.query(
-            AccountStatus
-        ).filter(
-            AccountStatus.game_id == int(gameId)
-        ).filter(
-            AccountStatus.account == int(account)
-        ).first()
-        if data:
-            item = data.to_dict()
-            if type_ == 'isFrozen':
-                AccountStatus.query.filter(
-                    AccountStatus.id == item['id']
-                ).update({
-                    'isFrozen': state,
-                })
-            else:
-                AccountStatus.query.filter(
-                    AccountStatus.id == item['id']
-                ).update({
-                    'isIpBlocked': state,
-                })
-            db.session.commit()
-        """
-        return {'state': 0, 'msg': ''}
 
 
 

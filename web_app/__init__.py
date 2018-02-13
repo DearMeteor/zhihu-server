@@ -1,17 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-Created by Linjianhui on 2017/1/3
-"""
-import logging
 import sys
-import os
 
 from flask import Flask, request
-from flask_apscheduler import APScheduler
 from werkzeug.utils import import_string
 from flask_httpauth import HTTPTokenAuth
 from flask_restful import Api
-# from flask_apscheduler import APScheduler
 from flask import send_from_directory
 
 from config import config, JsonConfig
@@ -40,10 +33,6 @@ def create_app(config_name):
 app = create_app(JsonConfig['ENV'])
 api = Api(app)
 auth = HTTPTokenAuth()
-scheduler = APScheduler()
-scheduler.init_app(app)
-if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-    scheduler.start()
 
 
 @app.errorhandler(404)

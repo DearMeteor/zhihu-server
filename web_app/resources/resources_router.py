@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created by Linjianhui on 2017/1/12
-"""
-
 import os
 
 from flask import send_from_directory, request

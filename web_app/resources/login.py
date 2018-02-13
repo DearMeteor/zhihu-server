@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created by Linjianhui on 2017/1/9
-"""
 from flask import session, request
 from flask_restful import Resource
 
@@ -18,15 +15,13 @@ class Login(Resource):
         password = form_data.get('password')
         user = AdminUser.query.filter(AdminUser.user_name == name).first()
         if user:
-            if user.verify_password(password):
-                token = user.generate_auth_token()
-                # session['token'] = token
+            if password == user.password:
                 session['user'] = user.to_dict()
             else:
                 return {'status': 401, 'message': '密码错误'}, 401
         else:
             return {'status': 401, 'message': '该用户不存在'}, 401
-        return {'status': 200, 'user_name': user.user_name, 'token': token}
+        return {'status': 200, 'user_name': user.user_name}
 
     def get(self):
         """
