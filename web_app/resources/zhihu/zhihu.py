@@ -1,7 +1,6 @@
 # _*_ coding:utf-8 _*_
 """
 Created by yueliuxin on 2018/2/7
-登录管理
 """
 
 from flask import request
